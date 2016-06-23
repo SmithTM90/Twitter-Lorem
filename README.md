@@ -1,4 +1,4 @@
-# Express Authentication
+# Twitter Lorem
 
 Express authentication template using Passport + flash messages + custom middleware
 

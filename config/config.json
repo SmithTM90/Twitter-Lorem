@@ -1,16 +1,22 @@
 {
   "development": {
-    "database": "express_auth_development",
+    "username": "travis",
+    "password": "password",
+    "database": "twitter_lorem_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "express_auth_test",
+    "username": "travis",
+    "password": "password",
+    "database": "twitter_lorem_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "express_auth_production",
+    "username": "travis",
+    "password": "password",
+    "database": "twitter_lorem_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
