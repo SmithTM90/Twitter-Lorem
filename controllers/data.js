@@ -6,13 +6,15 @@ var request = require('request');
 
 router.post('/search', function(req, res) {
   var queryString = req.body.s
-  console.log('before request');
+  console.log(req.body.s);
   request({
     url: 'https://api.twitter.com/1.1/search/tweets.json',
     headers: {
       'Authorization': 'Bearer ' + process.env.TWITTER_BEARER_TOKEN
     },
-    q: queryString
+    qs: {
+      q: queryString
+    }
   }, function(error,response,body) {
     console.log(error);
     console.log(response.statusCode);
