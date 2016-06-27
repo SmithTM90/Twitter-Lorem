@@ -16,6 +16,7 @@ router.post('/search', function(req, res) {
   }, function(error,response,body) {
     console.log(error);
     console.log(response.statusCode);
+    console.log(body);
     if(!error && response.statusCode === 200) {
       var dataObj = JSON.parse(body);
       console.log('after request');
