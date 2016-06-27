@@ -19,7 +19,6 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-//does flash need to be up above passport?
 app.use(flash());
 app.use(function(req, res, next) {
   res.locals.alerts = req.flash();
@@ -36,6 +35,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
 });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/data', require('./controllers/data'));
 
 var server = app.listen(process.env.PORT || 3000);
 
