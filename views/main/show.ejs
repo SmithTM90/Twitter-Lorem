@@ -1,1 +1,8 @@
-<%= console.log(tweets) %>
+<div class = "well">
+  <% tweets.forEach(function(tweet) { %>
+    <% var tweetString = tweet.text %>
+    <% var middleTweet = tweetString.replace(/RT/,''); %>
+    <% var formatTweet = middleTweet.replace(/[@!\/\\#,+()~%.'"*?<>{}]/g,''); %>
+    <%= formatTweet + '.'%>
+  <% }); %>
+</div>

@@ -6,9 +6,8 @@ var request = require('request');
 
 router.post('/search', function(req, res) {
   var queryString = req.body.s
-  console.log(req.body.s);
   request({
-    url: 'https://api.twitter.com/1.1/search/tweets.json',
+    url: 'https://api.twitter.com/1.1/search/tweets.json?lang=en',
     headers: {
       'Authorization': 'Bearer ' + process.env.TWITTER_BEARER_TOKEN
     },
@@ -16,22 +15,20 @@ router.post('/search', function(req, res) {
       q: queryString
     }
   }, function(error,response,body) {
-    console.log(error);
-    console.log(response.statusCode);
-    console.log(body);
     if(!error && response.statusCode === 200) {
       var dataObj = JSON.parse(body);
-      console.log('after request');
-      res.render('show', {tweets: dataObj});
+      //set helper function call to variable
+      //var format = loremFormat(dataObj.statuses.text)
+      res.render('main/show', {tweets: dataObj.statuses});
     }
   })
 })
 
-// router.post('/show', function(req,res) {
-
-// })
-
-//helper  function for formatting
+//helper function for formatting
+loremFormat = function(string) {
+  string.replace(RT, '');
+  return;
+};
 
 
 module.exports = router;
