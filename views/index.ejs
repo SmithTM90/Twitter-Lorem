@@ -1,11 +1,21 @@
-<h2>Home</h2>
+<div class="well">
+  <a href="/auth/signup">Signup</a>
+  <a href="/auth/login">Login</a>
+  <a href="/auth/logout">Logout</a>
+  <a href="/profile">Favorites</a>
+</div>
 
-<a href="/auth/signup">Signup</a>
-<a href="/auth/login">Login</a>
-<a href="/auth/logout">Logout</a>
-<a href="/profile">Profile</a>
+<p>Generate Lorem by keyword, phrase, user, etc.</p>
 
 <form action="/data/search" method="POST">
-  <input type="text" name="s">
-  <input type="submit">
+  <input type="text" name="s" placeholder="Enter a search term">
+  <button type="submit">Generate</button>
+  select how long your lorem will be:
+  <select name="loremLength">
+    <option value="1">1 sentence</option>
+    <option value="5">5 sentences</option>
+    <option value="10">10 sentences</option>
+    <option value="20">20 sentences</option>
+    <option value="30">30 sentences</option>
+  </select>
 </form>

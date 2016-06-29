@@ -1,8 +1,17 @@
-<div class = "well">
+<% var formatTweet; %>
+
+<div class="well">
   <% tweets.forEach(function(tweet) { %>
     <% var tweetString = tweet.text %>
     <% var middleTweet = tweetString.replace(/RT/,''); %>
-    <% var formatTweet = middleTweet.replace(/[@!\/\\#,+()~%.'"*?<>{}]/g,''); %>
-    <%= formatTweet + '.'%>
+    <!-- set global variable and local variable differently? -->
+    <% var contentTweet = middleTweet.replace(/[-_^@!\/\\#,+()~%.'"*?<>{}]/g,''); %>
+    <% formatTweet = middleTweet.replace(/[-_^@!\/\\#,+()~%.'"*?<>{}]/g,''); %>
+    <%= contentTweet + '.'%>
   <% }); %>
 </div>
+
+<form action='/data/favorites' method="POST">
+  <input type="hidden" name="content" value="<%= formatTweet + '.'%>">
+  <button type="submit">Add to favorites!</button>
+</form>

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var lorem = sequelize.define('lorem', {
-    searchterm: DataTypes.STRING
+    content: DataTypes.TEXT
   }, {
     classMethods: {
       associate: function(models) {
