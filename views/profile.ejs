@@ -3,6 +3,7 @@
   <% favorites.forEach(function(lorem){ %>
     <div class="well">
       <%=lorem.content %>
+      <button type="button" action="/remove" class="deleteButton" value=<%=lorem.id%>>Delete</button>
     </div>
   <% }); %>
 

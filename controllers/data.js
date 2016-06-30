@@ -43,7 +43,6 @@ router.get('/favorites', isLoggedIn, function(req,res) {
     where: { id: req.user.id }
   }).then(function(user){
     user.getLorems().then(function(lorems) {
-      console.log(lorems);
       res.render('profile.ejs', { favorites: lorems});
     });
   });

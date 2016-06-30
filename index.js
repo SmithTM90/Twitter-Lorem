@@ -1,6 +1,7 @@
 var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
+var db = require('./models');
 var session = require('express-session');
 var passport = require('./config/ppConfig');
 var flash = require('connect-flash');
@@ -33,6 +34,24 @@ app.get('/', function(req, res) {
 
 app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
+});
+
+app.delete('/remove/:id', function(req,res) {
+  console.log('DELETE FUNCTION')
+  console.log(req.params.id);
+  db.user.findOne({
+    where: {id : req.user.id}
+  }).then(function(user) {
+    user.removeLorem(req.params.id).then(function() {
+      db.lorem.findOne({
+        where: {id: req.params.id}
+      }).then(function(lorem) {
+        lorem.destroy().then(function() {
+          res.send('deleted properly');
+        });
+      })
+    });
+  });
 });
 
 app.use('/auth', require('./controllers/auth'));
