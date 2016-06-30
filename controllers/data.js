@@ -25,17 +25,28 @@ router.post('/search', isLoggedIn, function(req, res) {
   });
 });
 
-router.post('/favorites', function(req,res) {
-  console.log(req.body.content);
+router.post('/favorites', isLoggedIn, function(req,res) {
+  console.log(req.user);
   db.lorem.findOrCreate({
     where: { content: req.body.content }
-  }).spread(function(user, created) {
+  }).spread(function(lorem, created) {
     db.users_lorems.create({
-      userId: user.id,
+      userId: req.user.id,
       loremId: lorem.id
     });
   });
   res.redirect('/profile');
+});
+
+router.get('/favorites', isLoggedIn, function(req,res) {
+//set this up to retrieve the lorem from the DB based on the req.user.id
+  db.user.findOne({
+    where: { id: req.user.id }
+  }).then(function(user){
+    user.getLorems().then(function(lorems) {
+      res.render('profile.ejs', { favorites: lorems});
+    });
+  });
 });
 
 module.exports = router;
