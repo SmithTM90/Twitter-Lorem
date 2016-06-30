@@ -1,0 +1,25 @@
+select {
+  color: black;
+}
+
+button {
+  height: 50px;
+  color: black;
+}
+
+input {
+  height: 50px;
+  width: 75%;
+  color: black;
+  border-radius: 5px;
+}
+
+.well {
+  display: inline-block;
+  width: 10%;
+}
+
+.description {
+  display: inline-block;
+  width: 70%;
+}

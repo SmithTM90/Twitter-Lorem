@@ -49,7 +49,7 @@ app.delete('/remove/:id', function(req,res) {
         lorem.destroy().then(function() {
           res.send('deleted properly');
         });
-      })
+      });
     });
   });
 });

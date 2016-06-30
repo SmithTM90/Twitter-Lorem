@@ -1,3 +1,16 @@
 body {
   background-image: url(/img/BlueBG.jpg);
+  color: white;
+  font-family: 'Athiti', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 7%;
+}
+
+h1 {
+  font-family: 'Euphoria Script', cursive;
+  font-size: 60px;
+  font-weight: 900;
+  text-align: center;
+  color: white;
 }

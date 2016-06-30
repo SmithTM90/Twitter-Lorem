@@ -1,6 +1,8 @@
+<link rel="stylesheet" type="text/css" href="/css/show.css">
+
 <% var formatTweet; %>
 
-<div class="well">
+<div class="well col-xs-8 col-xs-offset-2">
   <% tweets.forEach(function(tweet) { %>
     <% var tweetString = tweet.text %>
     <% var middleTweet = tweetString.replace(/RT/,''); %>
@@ -11,7 +13,7 @@
   <% }); %>
 </div>
 
-<form action='/data/favorites' method="POST">
+<form action='/data/favorites' method="POST" class="col-xs-2 col-xs-offset-5">
   <input type="hidden" name="content" value="<%= formatTweet + '.'%>">
-  <button type="submit">Add to favorites!</button>
+  <button class="btn" type="submit">Add to favorites!</button>
 </form>

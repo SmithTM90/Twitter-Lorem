@@ -1,10 +1,12 @@
+<link rel="stylesheet" type="text/css" href="/css/profile.css">
+
 <h2>Favorites Page</h2>
 
   <% favorites.forEach(function(lorem){ %>
-    <div class="well">
+    <div class="well col-xs-8 col-xs-offset-2">
       <%=lorem.content %>
-      <button type="button" action="/remove" class="deleteButton" value=<%=lorem.id%>>Delete</button>
+      <button type="button" action="/remove" class=" btn deleteButton" value=<%=lorem.id%>>Remove Favorite</button>
     </div>
   <% }); %>
 
-<a href="/">Home</a>
+<button class="btn col-xs-2 col-xs-offset-5"><a href="/">Home</a></button>

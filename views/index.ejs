@@ -1,16 +1,26 @@
-<div class="well">
-  <a href="/auth/signup">Signup</a>
-  <a href="/auth/login">Login</a>
-  <a href="/auth/logout">Logout</a>
-  <a href="/data/favorites">Favorites</a>
+<link rel="stylesheet" type="text/css" href="/css/index.css">
+
+
+<div class="row">
+  <div class="description col-xs-10 col-xs-offset-1">Welcome to a twitter based text generator, use it any time that you need filler text for a project mock up, or even just for fun. Since the text generated is coming from Twitter, <em>BE WARNED:</em> text may be <em>NSFW</em>. People everywhere say whatever they please on the internet, and as such, you may come accross things that offend you, or make you lose hope for humanity. <em>ENJOY!</em>
+  </div>
+
+  <div class="well col-xs-2">
+    <a href="/auth/signup">Signup</a>
+    <a href="/auth/login">Login</a>
+    <a href="/auth/logout">Logout</a>
+    <a href="/data/favorites">Favorites</a>
+  </div>
 </div>
 
-<p>Generate Lorem by keyword, phrase, user, etc.</p>
+<div>Generate Lorem by keyword, phrase, user, etc.</div>
 
-<form action="/data/search" method="POST">
+<form action="/data/search" method="POST" class="searchForm">
   <input type="text" name="s" placeholder="Enter a search term">
-  <button type="submit">Generate</button>
-  select how long your lorem will be:
+  <button type="submit" class="btn">Generate</button>
+  <br>
+  <br>
+  Select how long your lorem will be:
   <select name="loremLength">
     <option value="1">1 sentence</option>
     <option value="5">5 sentences</option>

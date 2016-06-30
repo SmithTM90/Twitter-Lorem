@@ -1,4 +1,6 @@
-<form action="/auth/login" method="POST">
+<link rel="stylesheet" type="text/css" href="/css/login.css">
+
+<form action="/auth/login" method="POST" class="col-xs-6 col-xs-offset-3">
   <div class="form-group">
     <label for="authEmail">Email</label>
     <input id="authEmail" class="form-control" type="email" name="email">
@@ -9,7 +11,9 @@
     <input id="authPassword" class="form-control" type="password" name="password">
   </div>
 
-  <input class="btn btn-primary" type="submit">
+  <input class="btn" type="submit">
 </form>
 
-<h2>Don't have an account? Please <a href="/auth/signup">Sign-up!</a></h2>
+<div class="col-xs-6 col-xs-offset-3">
+  <p>Don't have an account? Please <a href="/auth/signup">Sign-up!</a></p>
+</div>
