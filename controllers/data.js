@@ -26,7 +26,6 @@ router.post('/search', isLoggedIn, function(req, res) {
 });
 
 router.post('/favorites', isLoggedIn, function(req,res) {
-  console.log(req.user);
   db.lorem.findOrCreate({
     where: { content: req.body.content }
   }).spread(function(lorem, created) {
@@ -35,7 +34,7 @@ router.post('/favorites', isLoggedIn, function(req,res) {
       loremId: lorem.id
     });
   });
-  res.redirect('/profile');
+  res.redirect('/');
 });
 
 router.get('/favorites', isLoggedIn, function(req,res) {
@@ -44,6 +43,7 @@ router.get('/favorites', isLoggedIn, function(req,res) {
     where: { id: req.user.id }
   }).then(function(user){
     user.getLorems().then(function(lorems) {
+      console.log(lorems);
       res.render('profile.ejs', { favorites: lorems});
     });
   });
