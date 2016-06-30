@@ -31,9 +31,9 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
-// app.get('/profile', isLoggedIn, function(req, res) {
-//   res.render('profile');
-// });
+app.get('/profile', isLoggedIn, function(req, res) {
+  res.render('profile');
+});
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/data', require('./controllers/data'));
