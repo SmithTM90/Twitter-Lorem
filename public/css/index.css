@@ -12,14 +12,20 @@ input {
   width: 75%;
   color: black;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .well {
-  display: inline-block;
-  width: 10%;
+  height: 24px;
+  line-height: 0px;
 }
 
-.description {
-  display: inline-block;
-  width: 70%;
+form {
+  margin-bottom: 10px;
 }
+
+@media (max-width: 500px) {
+  .navButton {
+    width: 100%;
+  }
+ }
