@@ -19,10 +19,10 @@ router.post('/signup', function(req, res) {
     if (created) {
       passport.authenticate('local', {
         successRedirect: '/',
-        successFlash: 'User created. You are logged in.'
+        successFlash: 'User created. You are logged in'
       })(req, res);
     } else {
-      console.log('user with that email already exists');
+      failureFlash: 'User with that email already exists'
       res.redirect('/auth/signup');
     }
   }).catch(function(error) {
@@ -38,7 +38,9 @@ router.get('/login', function(req, res) {
 //Checks the user credentials using passport
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/auth/login'
+  successFlash: 'You are now logged in',
+  failureRedirect: '/auth/login',
+  failureFlash: 'Login failed, please try again or sign up'
 }));
 
 router.get('/logout', function(req, res) {

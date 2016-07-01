@@ -1,5 +1,6 @@
 var express = require('express');
 var db = require('../models');
+var flash = require('connect-flash');
 var passport = require('../config/ppConfig');
 var router = express.Router();
 var request = require('request');
@@ -37,6 +38,7 @@ router.post('/favorites', isLoggedIn, function(req,res) {
       loremId: lorem.id
     });
   });
+  successFlash: 'Added to favorites'
   res.redirect('/');
 });
 

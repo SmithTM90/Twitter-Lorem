@@ -49,6 +49,7 @@ app.delete('/remove/:id', function(req,res) {
       }).then(function(lorem) {
         lorem.destroy().then(function() {
           res.send('deleted properly');
+          successFlash: 'Removed from favorites'
         });
       });
     });
