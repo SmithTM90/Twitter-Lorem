@@ -1,27 +1,24 @@
 # Twitter Lorem
 
-Express authentication template using Passport + flash messages + custom middleware
+A lorem ipsum type text generator, using the twitter API search functionality to create sentences to be used as filler text.
 
 ## Getting Started
-
-#### Scaffold w/tests (see `master` branch)
-
 * Run `npm install` to install dependencies
-  * Use `npm run lint:js` to lint your JS
-  * Use `npm run lint:css` to lint your CSS
-  * Use `npm test` to run tests
-* Setup the databases
-  * Change the database names in `config/config.json` to reflect your project
-  * Run `createdb project_name_development` to create the development database
-  * Run `createdb project_name_test` to create the test database
 
-#### Finished version (see `brian-finished` branch)
+When I was making this app, I knew that I wanted to just be grabbing the text from peoples tweets that I was getting returned from the API call. Once I got that working I went about setting up my databases and making all the RESTful routes communicate properly between database and the client side front-end.
 
-* Run `npm install` to install dependencies
-  * Use `npm run lint:js` to lint your JS
-  * Use `npm run lint:css` to lint your CSS
-  * Use `npm test` to run tests
-* Setup the databases
-  * Run `createdb express_auth_development` to create the development database
-  * Run `createdb express_auth_test` to create the test database
-  * Run `sequelize db:migrate` to run migrations
+Technologies used:
+  -HTML
+  -CSS
+  -JavaScript
+  -Bootstrap
+  -jQuery
+  -Express
+  -Sequelize
+  -EJS
+  -Passport
+  -Sessions
+  -Flash alerts
+
+Known Issues:
+  -Some of the responsiveness of the app is a little off when displaying on smaller screen sizes.

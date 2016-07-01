@@ -5,6 +5,8 @@ var router = express.Router();
 var request = require('request');
 var isLoggedIn = require('../middleware/isLoggedIn');
 
+
+//Twitter API call, uses an environment variable as the access token for all querys made to the API
 router.post('/search', isLoggedIn, function(req, res) {
   if(isLoggedIn === false) res.redirect('/');
   var queryString = req.body.s
@@ -25,6 +27,7 @@ router.post('/search', isLoggedIn, function(req, res) {
   });
 });
 
+//Adds selected lorem to the favorites database, with an association to the current user
 router.post('/favorites', isLoggedIn, function(req,res) {
   db.lorem.findOrCreate({
     where: { content: req.body.content }
@@ -37,8 +40,8 @@ router.post('/favorites', isLoggedIn, function(req,res) {
   res.redirect('/');
 });
 
+//Gets the favorites from the database that match the current user's id
 router.get('/favorites', isLoggedIn, function(req,res) {
-//set this up to retrieve the lorem from the DB based on the req.user.id
   db.user.findOne({
     where: { id: req.user.id }
   }).then(function(user){

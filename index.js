@@ -36,6 +36,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
 });
 
+//The route used for the delete functionality, finds the current user and uses that association to remove entries from the favorites database as well as the front end display.
 app.delete('/remove/:id', function(req,res) {
   console.log('DELETE FUNCTION')
   console.log(req.params.id);

@@ -7,6 +7,7 @@ router.get('/signup', function(req, res) {
   res.render('auth/signup');
 });
 
+//Creates a user based on the info the user input, and saves it to the user database
 router.post('/signup', function(req, res) {
   db.user.findOrCreate({
     where: { email: req.body.email },
@@ -34,6 +35,7 @@ router.get('/login', function(req, res) {
   res.render('auth/login');
 });
 
+//Checks the user credentials using passport
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
   failureRedirect: '/auth/login'

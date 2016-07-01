@@ -1,3 +1,4 @@
+//This handles the entire delete functionality for the database.
 $(document).ready(function() {
   $('.deleteButton').on('click', function(e) {
     e.preventDefault();
